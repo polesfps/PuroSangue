@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cadastro - Puro Sangue</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body style="background-color: #333333;">
+    <div class="login-container">
+        <h1>Seja Bem-Vindo!</h1>
+        <form id="cadastroForm" action="../../php/cadastro.php" method="POST">
+            <input name="nomeCompleto" type="text" id="nome" placeholder="Nome completo" required />
+            <input name="email" type="email" id="emailCadastro" placeholder="Email" required />
+            <input name="senha" type="password" id="senhaCadastro" placeholder="Senha" required />
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <div class="footer">
+            <p>Já tem uma conta? <a href="./login.php">Faça login</a></p>
+        </div>
+    </div>
+</body>
+</html>
