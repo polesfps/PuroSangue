@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <title>Recuperar Senha</title>
 </head>
+
 <body style="background-color: #333333; color: white; text-align: center; padding-top: 50px;">
   <h2>Recuperar Senha</h2>
-  <p>Informe seu email para receber instruções de redefinição de senha.</p>
-  <form onsubmit="enviarRecuperacao(event)">
-    <input type="email" id="recEmail" placeholder="Seu email" required>
-    <br><br>
-    <button type="submit">Enviar</button>
+  <p>Informe seu email para criar uma nova senha.</p>
+  <form action="../../php/RecuperarSenha.php" method="POST" />
+  <input name="email" type="email" id="recEmail" placeholder="Seu email" required> <br><br>
+
+  <input type="password" name="novaSenha" id="novaSenha" placeholder="Nova Senha" required>
+  <br><br>
+  <button type="submit">Confirmar</button>
   </form>
 
-  <script>
-    function enviarRecuperacao(event) {
-      event.preventDefault();
-      const email = document.getElementById('recEmail').value;
-      alert("Se o email estiver cadastrado, enviaremos um link de recuperação.");
-    }
-  </script>
 </body>
+
 </html>

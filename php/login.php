@@ -6,7 +6,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
-    // Busca o usuário no banco usando prepared statement para segurança
     $stmt = $conn->prepare("SELECT * FROM usuarios WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
@@ -15,10 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         if (password_verify($senha, $row['senha'])) {
-            $_SESSION['email'] = $row['email']; // salva o email na sessão
-            $_SESSION['nome'] = $row['nome'];   // salva o nome na sessão (opcional)
-            header('Location: plataforma.php'); // redireciona para plataforma
-            exit;
+            $_SESSION['email'] = $row['email'];
+            $_SESSION['nome'] = $row['nome'];
+            header('Location: ../site/html/index.html'); // redireciona
+            exit();
         } else {
             echo "Senha incorreta!";
         }
@@ -28,5 +27,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->close();
 }
 ?>
-
-
