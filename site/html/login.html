@@ -1,23 +1,44 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Login - Puro Sangue</title>
-  <link rel="stylesheet" href="../css/styles.css" />
+    <meta charset="UTF-8">
+    <title>Login/Cadastro/Esqueci a Senha</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body style="background-color: #333333;">
-  <div class="login-container">
-    <h1>Bem-vindo de volta!</h1>
-    <form id="loginForm" action="../../php/login.php" method="POST">
-      <input name="email" type="email" id="email" placeholder="Email" required />
-      <input name="senha" type="password" id="password" placeholder="Senha" required />
-      <button type="submit">Entrar</button>
-    </form>
-    <div class="footer">
-      <p>Não tem uma conta? <a href="../../php/cadastro.html">Cadastre-se</a></p>
-      <p><a href="recuperar-senha.html">Esqueceu sua senha?</a></p>
+    <div class="tab-buttons">
+        <button onclick="showTab('login')">Login</button>
+        <button onclick="showTab('cadastro')">Cadastro</button>
+        <button onclick="showTab('esqueci')">Esqueci a Senha</button>
     </div>
-  </div>
+
+    <div id="login" class="tab active">
+        <h2>Login</h2>
+        <form id="loginForm" action="../../php/login.php" method="POST">
+            <input name="email" type="email" id="email" placeholder="Email" required />
+            <input name="senha" type="password" id="password" placeholder="Senha" required />
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+    <div id="cadastro" class="tab">
+        <h2>Cadastro</h2>
+        <form>
+            <input type="text" placeholder="Nome" required><br>
+            <input type="email" placeholder="Email" required><br>
+            <input type="password" placeholder="Senha" required><br>
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+
+    <div id="esqueci" class="tab">
+        <h2>Esqueci a Senha</h2>
+        <form>
+            <input type="email" placeholder="Email" required><br>
+            <button type="submit">Recuperar Senha</button>
+        </form>
+    </div>
+
+    <script src="main.js"></script>
 </body>
 </html>

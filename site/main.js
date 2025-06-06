@@ -47,3 +47,48 @@ if (hamburger && navUl) {
   });
 }
 
+// Modal login
+document.addEventListener('DOMContentLoaded', function () {
+  const modal = document.getElementById('modal-auth');
+  const btnLoginHomepage = document.getElementById('btn-login-homepage');
+  const closeModal = document.getElementById('close-modal-auth');
+  const tabButtons = modal.querySelectorAll('.tab-buttons button');
+  const tabs = modal.querySelectorAll('.tab');
+
+  function showTab(tabId) {
+    tabs.forEach(tab => tab.classList.remove('active'));
+    modal.querySelector('#' + tabId).classList.add('active');
+    tabButtons.forEach(btn => btn.classList.remove('active'));
+    tabButtons.forEach(btn => {
+      if (btn.getAttribute('data-tab') === tabId) btn.classList.add('active');
+    });
+  }
+
+  if (btnLoginHomepage) {
+    btnLoginHomepage.addEventListener('click', function () {
+      modal.classList.add('active');
+      document.body.classList.add('modal-blur'); 
+      showTab('login');
+    });
+  }
+
+  if (closeModal) {
+    closeModal.addEventListener('click', function () {
+      modal.classList.remove('active');
+      document.body.classList.remove('modal-blur'); 
+    });
+  }
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+      document.body.classList.remove('modal-blur'); 
+    }
+  });
+
+  tabButtons.forEach(button => {
+    button.addEventListener('click', function () {
+      showTab(this.getAttribute('data-tab'));
+    });
+  });
+});
+

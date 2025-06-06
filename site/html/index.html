@@ -23,6 +23,8 @@
           <li><a href="#">Contato</a></li>
         </ul>
       </nav>
+    
+      <button id="btn-login-homepage">Login</button>
     </header>
 
     <main style="width:100vw;max-width:100vw;overflow-x:hidden;">
@@ -196,6 +198,41 @@
       </div>
     </footer>
   </div>
+  <div id="modal-auth" class="modal-auth">
+    <div class="modal-content">
+      <span class="close-modal" id="close-modal-auth">&times;</span>
+      <div class="tab-buttons" style="text-align:center;">
+        <button type="button" data-tab="login">Login</button>
+        <button type="button" data-tab="cadastro">Cadastro</button>
+        <button type="button" data-tab="esqueci">Esqueci a Senha</button>
+      </div>
+      <div id="login" class="tab active">
+        <h2>Login</h2>
+        <form>
+          <input type="email" placeholder="Email" required><br>
+          <input type="password" placeholder="Senha" required><br>
+          <button type="submit">Entrar</button>
+        </form>
+      </div>
+      <div id="cadastro" class="tab">
+        <h2>Cadastro</h2>
+        <form>
+          <input type="text" placeholder="Nome" required><br>
+          <input type="email" placeholder="Email" required><br>
+          <input type="password" placeholder="Senha" required><br>
+          <button type="submit">Cadastrar</button>
+        </form>
+      </div>
+      <div id="esqueci" class="tab">
+        <h2>Esqueci a Senha</h2>
+        <form>
+          <input type="email" placeholder="Email" required><br>
+          <button type="submit">Recuperar Senha</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <script src="../main.js"></script>
 </body>
 </html>
