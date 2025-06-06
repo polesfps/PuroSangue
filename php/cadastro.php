@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($stmt->execute()) {
         $stmt->close();
         $conn->close();
-        header('Location: ./login.php'); // Redireciona para a página de login
+        header('Location: ../site/html/login.html'); // Redireciona para a página de login
         exit();
     } else {
         echo "Erro ao cadastrar: " . $stmt->error;
