@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -24,28 +25,92 @@
         </ul>
       </nav>
     </header>
+    <div class="cart-icon">
+      🛒 <span id="cart-count">0</span>
+    </div>
+    <div class="cart-container" id="cart-container" style="display:none;">
+      <h4>Carrinho</h4>
+      <ul id="cart-items"></ul>
+      <p>Total: R$ <span id="cart-total">0.00</span></p>
+      <button id="clear-cart">Esvaziar Carrinho</button>
+    </div>
+    <script>
+  const cartIcon = document.querySelector('.cart-icon');
+  const cartContainer = document.getElementById('cart-container');
+  const cartItems = document.getElementById('cart-items');
+  const cartTotal = document.getElementById('cart-total');
+  const cartCount = document.getElementById('cart-count');
+  const clearCartBtn = document.getElementById('clear-cart');
+
+  let cart = [];
+
+  function updateCartDisplay() {
+    cartItems.innerHTML = '';
+    let total = 0;
+
+    cart.forEach((item, index) => {
+      total += item.price;
+      const li = document.createElement('li');
+      li.innerHTML = `${item.name} - R$ ${item.price.toFixed(2)} <button onclick="removeFromCart(${index})">x</button>`;
+      cartItems.appendChild(li);
+    });
+
+    cartTotal.innerText = total.toFixed(2);
+    cartCount.innerText = cart.length;
+  }
+
+  function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCartDisplay();
+  }
+
+  function addToCart(name, price) {
+    cart.push({ name, price });
+    updateCartDisplay();
+  }
+
+  document.querySelectorAll('.btn-product').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const name = this.parentElement.querySelector('h4').innerText;
+      const priceText = this.parentElement.querySelector('p').innerText.replace('R$', '').trim();
+      const price = parseFloat(priceText.replace(',', '.'));
+      addToCart(name, price);
+    });
+  });
+
+  cartIcon.addEventListener('click', () => {
+    cartContainer.style.display = cartContainer.style.display === 'none' ? 'block' : 'none';
+  });
+
+  clearCartBtn.addEventListener('click', () => {
+    cart = [];
+    updateCartDisplay();
+  });
+</script>
+
+
 
     <main style="width:100vw;max-width:100vw;overflow-x:hidden;">
       <section class="hero carrousel">
         <div class="hero-content">
           <h2>Drop de Inverno 2025</h2>
           <p>Estilo nas ruas com 20% OFF em peças selecionadas</p>
-          <a href="#" class="btn">Ver coleção</a>
+          <a href="Colecao.html" class="btn">Ver coleção</a>
         </div>
-        <div class="carrousel-slides">
-          <div class="carrousel-slide active">
-            <img src="../imagens/camisetaParceria2.jpg" alt="Coleção Inverno Slide 1" style="width:100%;border-radius:20px;">
-          </div>
-          <div class="carrousel-slide">
-            <img src="../imagens/camisetaParceria2costas2.jpg" alt="Coleção Inverno Slide 2" style="width:100%;border-radius:20px;">
-          </div>
-          <div class="carrousel-slide">
-            <img src="../imagens/calcacargoPraceria2.png" alt="Coleção Inverno Slide 3" style="width:100%;border-radius:20px;">
-          </div>
-          <div class="carrousel-slide">
-            <img src="../imagens/MoletomOversizedcostasParceria.jpg" alt="Camiseta Parceria 2" style="width:100%;border-radius:20px;">
-          </div>
+        <div class="carrousel-slide active">
+         <img src="../imagens/camisetaParceria2.png" alt="Coleção Inverno Slide 1" class="carrousel-img">
         </div>
+        <div class="carrousel-slide">
+          <img src="../imagens/calcacargoPraceria2.png" alt="Coleção Inverno Slide 2" class="carrousel-img">
+        </div>
+        <div class="carrousel-slide">
+          <img src="../imagens/camiseta2.png" alt="Coleção Inverno Slide 3" class="carrousel-img">
+        </div>
+        <div class="carrousel-slide">
+          <img src="../imagens/calcacargoPraceria2.png" alt="Camiseta Parceria 2" class="carrousel-img">
+        </div>
+
         <div class="carrousel-indicators">
           <span class="carrousel-indicator active"></span>
           <span class="carrousel-indicator"></span>
@@ -65,7 +130,7 @@
               </div>
               <h4>Camiseta Logo STRW</h4>
               <p>R$ 169,99</p>
-              <a href="#" class="btn-product">Adicionar ao Carrinho</a>
+              <a href="camiseta PS.html" class="btn-product">Detalhes</a>
             </div>
           </div>
           <div class="produto-container">
@@ -76,7 +141,7 @@
               </div>
               <h4>Moletom Oversized</h4>
               <p>R$ 289,90</p>
-              <a href="#" class="btn-product">Adicionar ao Carrinho</a>
+              <a href="moletomPS.html" class="btn-product">Detalhes</a>
             </div>
           </div>
           <div class="produto-container">
@@ -87,7 +152,7 @@
               </div>
               <h4>Calça Cargo Preta</h4>
               <p>R$ 219,90</p>
-              <a href="#" class="btn-product">Adicionar ao Carrinho</a>
+              <a href="calcacargoPS.html" class="btn-product">Detalhes</a>
             </div>
           </div>
           <div class="produto-container">
@@ -98,7 +163,7 @@
               </div>
               <h4>Jaqueta Street</h4>
               <p>R$ 399,90</p>
-              <a href="#" class="btn-product">Adicionar ao Carrinho</a>
+              <a href="JaquetaStreet.html" class="btn-product">Detalhes</a>
             </div>
           </div>
         </div>
@@ -115,7 +180,7 @@
               </div>
               <h4>Camiseta da Ferrari</h4>
               <p>R$ 389,90</p>
-              <a href="#" class="btn-product">Adicionar ao Carrinho</a>
+              <a href="camisetaParceria.html" class="btn-product">Detalhes</a>
             </div>
           </div>
           <div class="produto-container">
@@ -126,7 +191,7 @@
               </div>
               <h4>Moletom Oversized Ferrari</h4>
               <p>R$ 567,99</p>
-              <a href="#" class="btn-product">Adicionar ao Carrinho</a>
+              <a href="moletomParceria.html" class="btn-product">Detalhes</a>
             </div>
           </div>
           <div class="produto-container">
@@ -137,7 +202,7 @@
               </div>
               <h4>Calça Cargo Preta Ferrari</h4>
               <p>R$ 299,99</p>
-              <a href="#" class="btn-product">Adicionar ao Carrinho</a>
+              <a href="calcacargoParceria.html" class="btn-product">Detalhes</a>
             </div>
           </div>
           <div class="produto-container">
@@ -148,18 +213,10 @@
               </div>
               <h4>Jaqueta Street Ferrari</h4>
               <p>R$ 458,90</p>
-              <a href="#" class="btn-product">Adicionar ao Carrinho</a>
+              <a href="jaquetaStreetParceria.html" class="btn-product">Detalhes</a>
             </div>
           </div>
         </div>
-      </section>
-
-      <section class="newsletter">
-        <h3>Receba novidades e promoções</h3>
-        <form action="#">
-          <input type="email" placeholder="Seu e-mail" required>
-          <button type="submit" class="btn">Cadastrar</button>
-        </form>
       </section>
     </main>
 
