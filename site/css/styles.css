@@ -25,9 +25,9 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1999px;
   margin: auto;
-  padding: 20px;
+  padding: auto;
 }
 
 /* HEADER */
@@ -39,6 +39,8 @@ header {
   flex-wrap: wrap;
   padding: 20px 0;
   border-bottom: 1px solid #333;
+  padding: 25px;
+  align-items: center;
 }
 
 .logo {
@@ -100,11 +102,11 @@ nav a:hover::after {
   top: 70px;
   right: 30px;
   background: var(--card-bg);
-  color: white;
+  color: rgb(252, 249, 249);
   padding: 20px;
   border-radius: 10px;
   z-index: 999;
-  max-width: 300px;
+  max-width: auto;
   width: 100%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
 }
@@ -113,9 +115,6 @@ nav a:hover::after {
   margin-bottom: 10px;
   list-style: none;
 }
-
-/* HERO / CARROUSEL */
-
 .hero {
   margin: 40px 0;
   position: relative;
@@ -231,7 +230,7 @@ nav a:hover::after {
 
 .produto-container {
   background: var(--card-bg);
-  padding: 15px;
+  padding: 40px;
   border-radius: 15px;
   transition: transform 0.3s ease;
 }
@@ -360,4 +359,48 @@ footer {
   .grid {
     grid-template-columns: 1fr;
   }
+}
+.contato-main {
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.contato h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.form-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.form-contato label {
+  font-weight: 600;
+}
+
+.form-contato input,
+.form-contato textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.form-contato button.btn {
+  background-color: black;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.form-contato button.btn:hover {
+  background-color: #333;
 }
