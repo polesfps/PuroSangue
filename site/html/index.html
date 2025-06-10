@@ -17,77 +17,16 @@
       <button class="hamburger">&#9776;</button>
       <nav>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Coleções</a></li>
-          <li><a href="#">Masculino</a></li>
-          <li><a href="#">Feminino</a></li>
-          <li><a href="#">Contato</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="contato.html">Contato</a></li>
         </ul>
       </nav>
+      <div class="cart-container">
+  <button id="cart-btn">
+    🛒 <span id="cart-count">0</span>
+  </button>
+</div>
     </header>
-    <div class="cart-icon">
-      🛒 <span id="cart-count">0</span>
-    </div>
-    <div class="cart-container" id="cart-container" style="display:none;">
-      <h4>Carrinho</h4>
-      <ul id="cart-items"></ul>
-      <p>Total: R$ <span id="cart-total">0.00</span></p>
-      <button id="clear-cart">Esvaziar Carrinho</button>
-    </div>
-    <script>
-  const cartIcon = document.querySelector('.cart-icon');
-  const cartContainer = document.getElementById('cart-container');
-  const cartItems = document.getElementById('cart-items');
-  const cartTotal = document.getElementById('cart-total');
-  const cartCount = document.getElementById('cart-count');
-  const clearCartBtn = document.getElementById('clear-cart');
-
-  let cart = [];
-
-  function updateCartDisplay() {
-    cartItems.innerHTML = '';
-    let total = 0;
-
-    cart.forEach((item, index) => {
-      total += item.price;
-      const li = document.createElement('li');
-      li.innerHTML = `${item.name} - R$ ${item.price.toFixed(2)} <button onclick="removeFromCart(${index})">x</button>`;
-      cartItems.appendChild(li);
-    });
-
-    cartTotal.innerText = total.toFixed(2);
-    cartCount.innerText = cart.length;
-  }
-
-  function removeFromCart(index) {
-    cart.splice(index, 1);
-    updateCartDisplay();
-  }
-
-  function addToCart(name, price) {
-    cart.push({ name, price });
-    updateCartDisplay();
-  }
-
-  document.querySelectorAll('.btn-product').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-      e.preventDefault();
-      const name = this.parentElement.querySelector('h4').innerText;
-      const priceText = this.parentElement.querySelector('p').innerText.replace('R$', '').trim();
-      const price = parseFloat(priceText.replace(',', '.'));
-      addToCart(name, price);
-    });
-  });
-
-  cartIcon.addEventListener('click', () => {
-    cartContainer.style.display = cartContainer.style.display === 'none' ? 'block' : 'none';
-  });
-
-  clearCartBtn.addEventListener('click', () => {
-    cart = [];
-    updateCartDisplay();
-  });
-</script>
 
 
 
@@ -95,7 +34,7 @@
       <section class="hero carrousel">
         <div class="hero-content">
           <h2>Drop de Inverno 2025</h2>
-          <p>Estilo nas ruas com 20% OFF em peças selecionadas</p>
+          <p>Estilo nas ruas com 20% OFF em peças selecionadas</p><br>
           <a href="Colecao.html" class="btn">Ver coleção</a>
         </div>
         <div class="carrousel-slide active">
@@ -146,9 +85,9 @@
           </div>
           <div class="produto-container">
             <div class="produto">
-              <div class="camisa-hover">
-                <img src="../imagens/calcacargo.jpg" alt="Calça Cargo Preta" class="frente">
-                <img src="../imagens/calcacargocostas.png" alt="Calça Cargo Preta Costas" class="costas">
+               <div class="camisa-hover">
+                <img src="../imagens/calcacargo.jpg" alt="Moletom Oversized" class="frente">
+                <img src="../imagens/calcacargocosatas.jpg" alt="Moletom Oversized" class="costas">
               </div>
               <h4>Calça Cargo Preta</h4>
               <p>R$ 219,90</p>
@@ -198,7 +137,7 @@
             <div class="produto">
               <div class="camisa-hover">
                 <img src="../imagens/calcacargoParceria.jpg" alt="Calça Cargo Preta" class="frente" width="200">
-                <img src="../imagens/calcacargoParceiriacostas.png" alt="Calça Cargo Preta Costas" class="costas" width="200">
+                <img src="../imagens/calcacargocosatas.jpg" alt="Calça Cargo Preta Costas" class="costas" width="200">
               </div>
               <h4>Calça Cargo Preta Ferrari</h4>
               <p>R$ 299,99</p>
@@ -219,6 +158,12 @@
         </div>
       </section>
     </main>
+    <div id="cart-panel" class="cart-panel hidden">
+  <h2>Carrinho</h2>
+  <ul id="cart-items"></ul>
+  <p>Total: <span id="cart-total">R$ 0,00</span></p>
+  <button id="checkout-btn">Finalizar Compra</button>
+  </div>
 
     <footer>
       <div class="footer-grid">

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contato - Puro Sangue</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 class="logo">
+        <img src="../imagens/logo.png" alt="Puro Sangue" width="50px">Puro Sangue
+      </h1>
+      <button class="hamburger">&#9776;</button>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="contato.html" class="active">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="contato-main">
+      <section class="contato">
+        <h2>Fale com a gente</h2>
+        <p>Tem dúvidas, sugestões ou quer trocar uma ideia? Manda uma mensagem pra gente:</p>
+        <form class="form-contato" action="#" method="post">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" required>
+
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
+
+          <button type="submit" class="btn">Enviar</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <h4>Sobre a STRW</h4>
+          <p>Marca independente de streetwear focada em expressão urbana e autenticidade.</p>
+        </div>
+        <div>
+          <h4>Links úteis</h4>
+          <ul>
+            <li><a href="#">Termos de uso</a></li>
+            <li><a href="#">Política de privacidade</a></li>
+            <li><a href="#">Suporte</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Pagamento</h4>
+          <p>Cartões, Pix, Boleto</p>
+          <p>Parcelamento em até 6x</p>
+        </div>
+        <div>
+          <h4>Redes sociais</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copy">
+        &copy; 2025 STRW. Todos os direitos reservados.
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
