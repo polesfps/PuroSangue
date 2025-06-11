@@ -16,22 +16,41 @@
       </h1>
       <button class="hamburger">&#9776;</button>
       <nav>
+        
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="contato.html">Contato</a></li>
         </ul>
       </nav>
-      <div class="cart-container">
-        <div id="cart-panel" class="cart-panel hidden">
-  <h2>Carrinho</h2>
-  <ul id="cart-items"></ul>
-  <p>Total: <span id="cart-total">R$ 0,00</span></p>
-  <button id="checkout-btn">Finalizar Compra</button>
+      <button id="cart-button" class="cart-button">
+  🛒 <span id="cart-count">0</span>
+</button>
+<button id="profile-button" class="profile-button" title="Perfil">
+  👤
+</button>
+
+<!-- Modal de login e perfil -->
+<div id="profile-modal" class="modal hidden">
+  <div class="modal-content">
+    <span id="close-profile-modal" class="close">&times;</span>
+
+    <!-- Tela Login -->
+    <div id="login-screen">
+      <h2>Entrar</h2>
+      <input type="text" id="username" placeholder="Usuário" />
+      <input type="password" id="password" placeholder="Senha" />
+      <button id="login-submit">Login</button>
+    </div>
+
+    <!-- Tela Perfil -->
+    <div id="profile-screen" class="hidden">
+      <h2>Olá, <span id="display-username"></span>!</h2>
+      <button id="logout-btn">Sair</button>
+    </div>
   </div>
-  <button id="cart-btn">
-    🛒 <span id="cart-count">0</span>
-  </button>
 </div>
+
+
     </header>
 
 
@@ -76,6 +95,7 @@
               <h4>Camiseta Logo STRW</h4>
               <p>R$ 169,99</p>
               <a href="camiseta PS.html" class="btn-product">Detalhes</a>
+              <button class="btn-add-cart" data-nome="Camiseta Logo STRW" data-preco="169.99">Adicionar ao carrinho</button>
             </div>
           </div>
           <div class="produto-container">
@@ -87,6 +107,7 @@
               <h4>Moletom Oversized</h4>
               <p>R$ 289,90</p>
               <a href="moletomPS.html" class="btn-product">Detalhes</a>
+              <button class="btn-add-cart" data-nome="Moletom Oversized" data-preco="289.90">Adicionar ao carrinho</button>
             </div>
           </div>
           <div class="produto-container">
@@ -98,6 +119,7 @@
               <h4>Calça Cargo Preta</h4>
               <p>R$ 219,90</p>
               <a href="calcacargoPS.html" class="btn-product">Detalhes</a>
+              <button class="btn-add-cart" data-nome="Calça Cargo Preta" data-preco="219.90">Adicionar ao carrinho</button>
             </div>
           </div>
           <div class="produto-container">
@@ -109,6 +131,7 @@
               <h4>Jaqueta Street</h4>
               <p>R$ 399,90</p>
               <a href="JaquetaStreet.html" class="btn-product">Detalhes</a>
+              <button class="btn-add-cart" data-nome="Jaqueta Street" data-preco="399.90">Adicionar ao carrinho</button>
             </div>
           </div>
         </div>
@@ -126,6 +149,7 @@
               <h4>Camiseta da Ferrari</h4>
               <p>R$ 389,90</p>
               <a href="camisetaParceria.html" class="btn-product">Detalhes</a>
+              <button class="btn-add-cart" data-nome="Camiseta Logo STRW" data-preco="169.99">Adicionar ao carrinho</button>
             </div>
           </div>
           <div class="produto-container">
@@ -137,6 +161,7 @@
               <h4>Moletom Oversized Ferrari</h4>
               <p>R$ 567,99</p>
               <a href="moletomParceria.html" class="btn-product">Detalhes</a>
+              <button class="btn-add-cart" data-nome="Moletom Oversized Ferrari" data-preco="567.99">Adicionar ao carrinho</button>
             </div>
           </div>
           <div class="produto-container">
@@ -148,6 +173,7 @@
               <h4>Calça Cargo Preta Ferrari</h4>
               <p>R$ 299,99</p>
               <a href="calcacargoParceria.html" class="btn-product">Detalhes</a>
+              <button class="btn-add-cart" data-nome="Calça Cargo Preta Ferrari" data-preco="299.99">Adicionar ao carrinho</button>
             </div>
           </div>
           <div class="produto-container">
@@ -159,11 +185,23 @@
               <h4>Jaqueta Street Ferrari</h4>
               <p>R$ 458,90</p>
               <a href="jaquetaStreetParceria.html" class="btn-product">Detalhes</a>
+              <button class="btn-add-cart" data-nome="Jaqueta Street Ferrari" data-preco="458.90">Adicionar ao carrinho</button>
             </div>
           </div>
         </div>
       </section>
     </main>
+    <div id="cart-modal" class="cart-modal hidden">
+  <div class="cart-content">
+    <h3>Carrinho</h3>
+    <ul id="cart-items"></ul>
+    <div class="cart-total">
+      Total: R$ <span id="cart-total">0.00</span>
+    </div>
+    <button id="close-cart" class="btn">Fechar</button>
+  </div>
+</div>
+
     
 
     <footer>

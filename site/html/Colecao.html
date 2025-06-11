@@ -21,6 +21,9 @@
           <li><a href="contato.html">Contato</a></li>
         </ul>
       </nav>
+      <button id="cart-button" class="cart-button">
+  🛒 <span id="cart-count">0</span>
+</button>
     </header>
 
     <main>
@@ -40,8 +43,9 @@
                 <img src="../imagens/camisetaParceria2costas2.jpg" alt="Camiseta Ferrari Costas" class="costas">
               </div>
               <h4>Camiseta da Ferrari</h4>
-              <p>R$ 389,90</p>
+              <p>R$ 589,90</p>
               <a href="camisetaParceria.html" class="btn-product">Detalhes</a>
+              <button class="btn-add-cart" data-nome="Camiseta da Ferrari" data-preco="589.90">Adicionar ao carrinho</button>
             </div>
           </div>
 
@@ -53,8 +57,9 @@
                 <img src="../imagens/calcacargo2costas2.jpg" alt="Moletom Ferrari Costas" class="costas">
               </div>
               <h4>Moletom Oversized Ferrari</h4>
-              <p>R$ 567,99</p>
+              <p>R$ 767,99</p>
               <a href="calcacargoParceria.html" class="btn-product">Detalhes</a>
+              <button class="btn-add-cart" data-nome="Moletom Oversized Ferrari" data-preco="767.99">Adicionar ao carrinho</button>
             </div>
           </div>
 
@@ -66,8 +71,9 @@
                 <img src="../imagens/camiseta2costas.jpg" alt="Jaqueta Ferrari Costas" class="costas">
               </div>
               <h4>Jaqueta Street Ferrari</h4>
-              <p>R$ 458,90</p>
+              <p>R$ 858,90</p>
               <a href="jaquetaStreetParceria.html" class="btn-product">Detalhes</a>
+              <button class="btn-add-cart" data-nome="Jaqueta Street Ferrari" data-preco="858.90">Adicionar ao carrinho</button>
             </div>
           </div>
 
@@ -78,8 +84,9 @@
                 <img src="../imagens/calcacargo2costas2.jpg" alt="Calça Cargo Ferrari Costas" class="costas">
               </div>
               <h4>Calça Cargo Ferrari</h4>
-              <p>R$ 458,90</p>
+              <p>R$ 658,90</p>
               <a href="calcacargo.html" class="btn-product">Detalhes</a>
+              <button class="btn-add-cart" data-nome="Calça Cargo Ferrari" data-preco="658.90">Adicionar ao carrinho</button>
             </div>
           </div>    
         </div>
@@ -87,6 +94,17 @@
 
       </section>
     </main>
+
+    <div id="cart-modal" class="cart-modal hidden">
+  <div class="cart-content">
+    <h3>Carrinho</h3>
+    <ul id="cart-items"></ul>
+    <div class="cart-total">
+      Total: R$ <span id="cart-total">0.00</span>
+    </div>
+    <button id="close-cart" class="btn">Fechar</button>
+  </div>
+</div>
 
     <footer>
       <div class="footer-grid">
