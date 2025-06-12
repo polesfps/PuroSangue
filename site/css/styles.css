@@ -546,7 +546,7 @@ footer {
   display: inline-block;
   margin-top: 10px;
   background: var(--btn-bg);
-  color: white;
+  color: rgb(69, 21, 21);
   padding: 8px 16px;
   border-radius: 25px;
   text-decoration: none;
@@ -554,7 +554,7 @@ footer {
 }
 
 .btn-add-cart-detalhe:hover {
-  background-color: #4f2828;
+  background-color: #ff0000;
 }
 
 @media (max-width: 600px) {
@@ -575,7 +575,7 @@ footer {
   background: transparent;
   border: none;
   cursor: pointer;
-  color: white;
+  color: rgb(252, 0, 0);
   margin-left: 10px;
   position: relative;
 }
@@ -583,7 +583,8 @@ footer {
 .modal {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -595,7 +596,7 @@ footer {
 }
 
 .modal-content {
-  background: #fff;
+  background: #000000;
   padding: 25px 30px;
   border-radius: 8px;
   width: 320px;
@@ -623,7 +624,7 @@ input[type="password"] {
 
 button {
   background-color: #222;
-  color: #fff;
+  color: #dedede;
   border: none;
   padding: 10px 18px;
   margin-top: 12px;
