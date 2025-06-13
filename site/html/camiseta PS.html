@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Camiseta Logo STRW - Puro Sangue</title>
   <link rel="stylesheet" href="../css/styles.css" />
   <link rel="stylesheet" href="../css/detalhes.css" />
@@ -10,6 +10,7 @@
 </head>
 <body>
   <div class="container">
+    <!-- Cabeçalho -->
     <header>
       <h1 class="logo">
         <img src="../imagens/logo.png" alt="Puro Sangue" width="50px" />Puro Sangue
@@ -26,19 +27,21 @@
       </button>
     </header>
 
+    <!-- Conteúdo Principal -->
     <main>
       <section class="produto-detalhe">
         <div class="produto-imagem">
-            <div class="produto">
-              <div class="camisa-hover">
-                <img src="../imagens/camiseta.jpg" alt="Camiseta Frente" class="frente">
-                <img src="../imagens/camisetacostas.png" alt="Camiseta Costas" class="costas">
-              </div>
-              <h4>Camiseta Logo STRW</h4>
-              <p>R$ 169,99</p>
-              <button class="btn-add-cart" data-nome="Camiseta Logo STRW" data-preco="169.99">Adicionar ao carrinho</button>
+          <div class="produto">
+            <div class="camisa-hover">
+              <img src="../imagens/camiseta.jpg" alt="Camiseta Frente" class="frente" />
+              <img src="../imagens/camisetacostas.png" alt="Camiseta Costas" class="costas" />
             </div>
+            <h4>Camiseta Logo STRW</h4>
+            <p class="preco">R$ 169,99</p>
+            <button class="btn-add-cart" data-nome="Camiseta Logo STRW" data-preco="169.99">Adicionar ao carrinho</button>
           </div>
+        </div>
+
         <div class="produto-info">
           <h2>Camiseta Logo STRW</h2>
           <p class="preco">R$ 169,99</p>
@@ -46,7 +49,6 @@
             Camiseta 100% algodão com estampa exclusiva da marca STRW. Conforto e estilo para o seu dia a dia nas ruas.
             Disponível em tamanhos P, M, G e GG.
           </p>
-
           <label for="tamanho">Escolha o tamanho:</label>
           <select id="tamanho" name="tamanho">
             <option value="P">P</option>
@@ -54,19 +56,23 @@
             <option value="G">G</option>
             <option value="GG">GG</option>
           </select>
+        </div>
       </section>
     </main>
-    <div id="cart-modal" class="cart-modal hidden">
-  <div class="cart-content">
-    <h3>Carrinho</h3>
-    <ul id="cart-items"></ul>
-    <div class="cart-total">
-      Total: R$ <span id="cart-total">0.00</span>
-    </div>
-    <button id="close-cart" class="btn">Fechar</button>
-  </div>
-</div>
 
+    <!-- Modal do Carrinho -->
+    <div id="cart-modal" class="cart-modal hidden">
+      <div class="cart-content">
+        <h3>Carrinho</h3>
+        <ul id="cart-items"></ul>
+        <div class="cart-total">
+          Total: R$ <span id="cart-total">0.00</span>
+        </div>
+        <button id="close-cart" class="btn">Fechar</button>
+      </div>
+    </div>
+
+    <!-- Rodapé -->
     <footer>
       <div class="footer-grid">
         <div>

@@ -39,7 +39,7 @@ header {
   flex-wrap: wrap;
   padding: 20px 0;
   border-bottom: 1px solid #333;
-  padding: 25px;
+  padding: 2px;
   align-items: center;
 }
 
@@ -572,7 +572,7 @@ footer {
 }
 .profile-button {
   font-size: 24px;
-  background: transparent;
+  background: none;
   border: none;
   cursor: pointer;
   color: rgb(252, 0, 0);
@@ -584,7 +584,7 @@ footer {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(9.9px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -600,7 +600,7 @@ footer {
   padding: 25px 30px;
   border-radius: 8px;
   width: 320px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  box-shadow: 0 0 150px rgba(0, 0, 0, 0.3);
   position: relative;
   text-align: center;
 }
@@ -623,7 +623,7 @@ input[type="password"] {
 }
 
 button {
-  background-color: #222;
+  background-color: #490202;
   color: #dedede;
   border: none;
   padding: 10px 18px;
@@ -635,5 +635,5 @@ button {
 }
 
 button:hover {
-  background-color: #555;
+  background-color: #fa0000;
 }
