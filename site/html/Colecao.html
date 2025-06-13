@@ -11,25 +11,50 @@
   <div class="container">
 
     <header>
+      <div class="container">
+    <header>
       <h1 class="logo">
         <img src="../imagens/logo.png" alt="Puro Sangue" width="50px">Puro Sangue
       </h1>
       <button class="hamburger">&#9776;</button>
       <nav>
+
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="contato.html">Contato</a></li>
         </ul>
       </nav>
-      <button id="cart-button" class="cart-button">
-  🛒 <span id="cart-count">0</span>
-</button>
+      <div class="user-buttons">
+        <button id="cart-button" class="cart-button" title="Carrinho">
+          🛒 <span id="cart-count">0</span>
+        </button>
+        <button id="profile-button" class="profile-button" title="Perfil">
+          👤
+        </button>
+      </div>
+
+      <!-- Modal de login e perfil -->
+      <div id="profile-modal" class="modal hidden">
+        <div class="modal-content">
+          <span id="close-profile-modal" class="close">&times;</span>
+
+          <!-- Tela Login -->
+          <div id="login-screen">
+            <h2>Entrar</h2>
+            <input type="text" id="username" placeholder="Usuário" />
+            <input type="password" id="password" placeholder="Senha" />
+            <button id="login-submit">Login</button>
+            <button id="cadastro-btn">Cadastrar</button>
+
+          </div>
+        </div>
+      </div>
     </header>
 
     <main>
       <section class="colecao-hero">
-        <h2>Coleção Outono/Inverno 2025</h2>
-        <p>Explore o estilo urbano com atitude. Peças exclusivas com identidade própria.</p>
+        <h2>Coleção do Drip em 2025</h2>
+        <p>Explore o estilo urbano com atitude. Peças exclusivas da nossa com identidade própria.</p>
       </section>
 
       <section class="produtos">

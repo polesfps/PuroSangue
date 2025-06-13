@@ -1,23 +1,106 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Moletom Oversized</title>
-  <link rel="stylesheet" href="../css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Moletom Oversized</h4> - Puro Sangue</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/detalhes.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>Puro Sangue</h1>
+      <h1 class="logo">
+        <img src="../imagens/logo.png" alt="Puro Sangue" width="50px" />Puro Sangue
+      </h1>
+      <button class="hamburger">&#9776;</button>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+      <button id="cart-button" class="cart-button">
+        🛒 <span id="cart-count">0</span>
+      </button>
     </header>
 
     <main>
-      <h2>Moletom Oversized</h2>
-      <img src="../imagens/MoletomOversized.jpg" alt="Moletom Oversized" style="max-width: 300px;">
-      <p><strong>Preço:</strong> R$ 169,99</p>
-      <p><strong>Descrição:</strong> Camiseta de algodão premium com o logo da marca STRW estampado.</p>
-      <a href="../html/index.html" class="btn">Voltar à loja</a>
+      <section class="produto-detalhe">
+        <div class="produto-imagem">
+            <div class="produto">
+              <div class="camisa-hover">
+                <img src="../imagens/MoletomOversized.jpg" alt="Camiseta Frente" class="frente">
+                <img src="../imagens/MoletomOversizedcostas.jpg" alt="Camiseta Costas" class="costas">
+              </div>
+              <h4>Moletom Oversized</h4>
+              <p>R$ 289,90</p>
+              <button class="btn-add-cart" data-nome="Moletom Oversized" data-preco="289.90">Adicionar ao carrinho</button>
+            </div>
+          </div>
+        <div class="produto-info">
+          <h2>Moletom Oversized</h2>
+          <p class="preco">R$ 289,90</p>
+          <p class="descricao">
+            Moletom Oversized 100% algodão com estampa exclusiva da marca STRW. Conforto e estilo para o seu dia a dia nas ruas.
+            Disponível em tamanhos P, M, G e GG.
+          </p>
+
+          <label for="tamanho">Escolha o tamanho:</label>
+          <select id="tamanho" name="tamanho">
+            <option value="P">P</option>
+            <option value="M" selected>M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+          </select>
+      </section>
     </main>
+    <div id="cart-modal" class="cart-modal hidden">
+  <div class="cart-content">
+    <h3>Carrinho</h3>
+    <ul id="cart-items"></ul>
+    <div class="cart-total">
+      Total: R$ <span id="cart-total">0.00</span>
+    </div>
+    <button id="close-cart" class="btn">Fechar</button>
   </div>
+</div>
+
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <h4>Sobre a STRW</h4>
+          <p>Marca independente de streetwear focada em expressão urbana e autenticidade.</p>
+        </div>
+        <div>
+          <h4>Links úteis</h4>
+          <ul>
+            <li><a href="#">Termos de uso</a></li>
+            <li><a href="#">Política de privacidade</a></li>
+            <li><a href="#">Suporte</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Pagamento</h4>
+          <p>Cartões, Pix, Boleto</p>
+          <p>Parcelamento em até 6x</p>
+        </div>
+        <div>
+          <h4>Redes sociais</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copy">
+        &copy; 2025 STRW. Todos os direitos reservados.
+      </div>
+    </footer>
+  </div>
+
+  <script src="../main.js"></script>
 </body>
 </html>
